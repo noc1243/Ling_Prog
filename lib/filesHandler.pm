@@ -111,7 +111,7 @@
   
   sub runAllDirectories #Roda todos os diretórios dentro do Root do Programa!
   {
-    my $dir = "..\\";
+    my $dir = "..\/";
     my @directories = getFiles ($dir);
     foreach (@directories)
     {
@@ -136,7 +136,7 @@
   
   sub chkAllDirectories #Roda todos os diretórios dentro do Root do Programa e checa por Curses e SPAM!
   {
-    my $dir = "..\\";
+    my $dir = "..\/";
     my @directories = getFiles ($dir);
     my $curse;
     my @curses = getCurses ($dir);

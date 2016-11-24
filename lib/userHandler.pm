@@ -11,8 +11,8 @@
   
   sub insertUser #insere e valida um usuário na pasta Users do Root utilizando os valores passados como argumento
   {
-    my $dir =  "..\\Users\\";
-    my $root = "..\\";
+    my $dir =  "..\/Users\/";
+    my $root = "..\/";
     my $userName = $_[0];
     my $unCryptPassword = $_[1];
     my $cryptPassword = textReader::CryptPass ($unCryptPassword);
@@ -67,7 +67,7 @@
   
   sub deleteUser #deleta o usuario com o nome informado
   {
-    my $dir = "..\\Users\\";
+    my $dir = "..\/Users\/";
     my $userName = $_[0];
     my $userIndex;
     if (!($userIndex = textReader::chkName($dir, $userName)))
@@ -104,7 +104,7 @@
   
   sub validateLogin #valida do login de um usuário. Recebe como argumento o nome do usuário e a senha
   {
-    my $dir = "..\\Users\\";
+    my $dir = "..\/Users\/";
     my $userName = $_[0];
     my $userPassword = $_[1];
     my $userActualPassword;
@@ -147,7 +147,7 @@
   
   sub createPost #Cria um post. Recebe como argumento o Autor do post, qual post foi respondido (0 quer dizer que não foi resposta), A mensagem do post e o topico no qual o post será feito
   {
-    my $dir = "..\\";
+    my $dir = "..\/";
     my $author = $_[0];
     my $response = $_[1];
     my $message = $_[2];
@@ -170,7 +170,7 @@
       return 0;
     }
     
-    $topicPath = $dir . "\\" . $topicPath;
+    $topicPath = $dir . "\/" . $topicPath;
     my @txts = filesHandler::getFilesList ($topicPath);
     
     my $i = 1;
@@ -179,7 +179,7 @@
       $i++;
     }
     
-    my $topicFileName = $topicPath . "\\" . $i . ".txt";
+    my $topicFileName = $topicPath . "\/" . $i . ".txt";
     
     open(my $fh, '>', $topicFileName) or die "Could not open file '$topicFileName' $!";
     print $fh $author,"\n";

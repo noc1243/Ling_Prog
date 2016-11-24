@@ -152,7 +152,7 @@
   {
     my $searchString = $_[0];
     my @distances;
-    my $dir = "..\\";
+    my $dir = "..\/";
     my @directories = filesHandler::getFiles ($dir);
     
     my @foundDirectories;
